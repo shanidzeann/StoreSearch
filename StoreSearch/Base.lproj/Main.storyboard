@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,49 +13,64 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="StoreSearch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aux-Lo-yXn">
-                                <rect key="frame" x="0.0" y="51" width="375" height="616"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchResultCell" id="5lj-0J-ypL">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5lj-0J-ypL" id="TEw-BV-dNh">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Uue-QK-gxm"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="4H0-SJ-Amc"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" placeholder="App name, artist, song, album, e-book" translatesAutoresizingMaskIntoConstraints="NO" id="sAg-EJ-gYe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="P5c-X8-6SG"/>
                                 </connections>
                             </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOO-ib-qfc">
+                                <rect key="frame" x="0.0" y="51" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="soA-wx-qQN">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="HG8-s2-wUz">
+                                            <rect key="frame" x="57" y="5.6666666666666679" width="300" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="All"/>
+                                                <segment title="Music"/>
+                                                <segment title="Software"/>
+                                                <segment title="E-books"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SnK-4I-8ub"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sAg-EJ-gYe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4DT-qB-GLV"/>
                             <constraint firstItem="sAg-EJ-gYe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C5B-28-Jrg"/>
-                            <constraint firstItem="aux-Lo-yXn" firstAttribute="top" secondItem="sAg-EJ-gYe" secondAttribute="bottom" id="NLp-Ad-Nmx"/>
-                            <constraint firstItem="sAg-EJ-gYe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fDG-3G-W5H"/>
+                            <constraint firstItem="sAg-EJ-gYe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CYR-BW-d8g"/>
+                            <constraint firstItem="eOO-ib-qfc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OOz-zw-sFd"/>
+                            <constraint firstItem="eOO-ib-qfc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Qvo-uK-eKX"/>
+                            <constraint firstItem="aux-Lo-yXn" firstAttribute="top" secondItem="eOO-ib-qfc" secondAttribute="bottom" id="YcP-uz-32g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aux-Lo-yXn" secondAttribute="bottom" id="uyX-gT-ROX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aux-Lo-yXn" secondAttribute="trailing" id="vPd-ca-9BS"/>
                             <constraint firstItem="aux-Lo-yXn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xJ8-Zg-xFR"/>
+                            <constraint firstItem="eOO-ib-qfc" firstAttribute="top" secondItem="sAg-EJ-gYe" secondAttribute="bottom" id="zPY-5z-eXN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="sAg-EJ-gYe" id="zPR-SC-T3U"/>
+                        <outlet property="segmentedControl" destination="HG8-s2-wUz" id="1PV-7P-vJJ"/>
                         <outlet property="tableView" destination="aux-Lo-yXn" id="2ca-B1-S6v"/>
                     </connections>
                 </viewController>
