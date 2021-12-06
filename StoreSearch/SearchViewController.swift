@@ -49,15 +49,7 @@ class SearchViewController: UIViewController {
       return url!
     }
     
-    func performStoreRequest(with url: URL) -> Data? {
-        do {
-            return try Data(contentsOf: url)
-        } catch {
-            print("Download Error: \(error.localizedDescription)")
-            showNetworkError()
-            return nil
-        }
-    }
+
     
     func parse(data: Data) -> [SearchResult] {
         do {
@@ -141,20 +133,30 @@ extension SearchViewController: UISearchBarDelegate {
             hasSearched = true
             searchResults = []
             
-            let queue = DispatchQueue.global()
             let url = iTunesURL(searchText: searchBar.text!)
-            
-            queue.async {
-                if let data = self.performStoreRequest(with: url) {
-                    self.searchResults = self.parse(data: data)
-                    self.searchResults.sort(by: <)
+
+            let session = URLSession.shared
+            session.dataTask(with: url) { data, response, error in
+                if let error = error {
+                    print("Failure: \(error.localizedDescription)")
+                } else {
+                    if let data = data {
+                        self.searchResults = self.parse(data: data)
+                        self.searchResults.sort(by: <)
+                        DispatchQueue.main.async {
+                            self.isLoading = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                 }
                 DispatchQueue.main.async {
-                    self.isLoading = false
-                    self.tableView.reloadData()
+                  self.hasSearched = false
+                  self.isLoading = false
+                  self.tableView.reloadData()
+                  self.showNetworkError()
                 }
-                return
-            }
+            }.resume()
     
         }
     }
