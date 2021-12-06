@@ -20,6 +20,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var dataTask: URLSessionDataTask?
+    
     var searchResults = [SearchResult]()
     
     var hasSearched = false
@@ -127,6 +129,7 @@ extension SearchViewController: UISearchBarDelegate {
         if !searchBar.text!.isEmpty {
             searchBar.resignFirstResponder()
             
+            dataTask?.cancel()
             isLoading = true
             tableView.reloadData()
             
@@ -136,9 +139,9 @@ extension SearchViewController: UISearchBarDelegate {
             let url = iTunesURL(searchText: searchBar.text!)
 
             let session = URLSession.shared
-            session.dataTask(with: url) { data, response, error in
-                if let error = error {
-                    print("Failure: \(error.localizedDescription)")
+            dataTask = session.dataTask(with: url) { data, response, error in
+                if let error = error as NSError?, error.code == -999 {
+                    return
                 } else {
                     if let data = data {
                         self.searchResults = self.parse(data: data)
@@ -156,7 +159,8 @@ extension SearchViewController: UISearchBarDelegate {
                   self.tableView.reloadData()
                   self.showNetworkError()
                 }
-            }.resume()
+            }
+            dataTask?.resume()
     
         }
     }
