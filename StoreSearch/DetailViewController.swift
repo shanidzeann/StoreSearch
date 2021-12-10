@@ -24,6 +24,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         popupView.layer.cornerRadius = 10
+        view.backgroundColor = UIColor.clear
         
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(close))
         gestureRecognizer.cancelsTouchesInView = false

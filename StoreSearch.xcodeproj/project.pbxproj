@@ -19,6 +19,7 @@
 		899BDB22275CFC330020A25B /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899BDB21275CFC330020A25B /* LoadingCell.xib */; };
 		89A0859B27635F3700C51B6D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0859A27635F3700C51B6D /* DetailViewController.swift */; };
 		89A0859D27638CAD00C51B6D /* DimmingPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0859C27638CAD00C51B6D /* DimmingPresentationController.swift */; };
+		89A0859F2763D6B300C51B6D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0859E2763D6B300C51B6D /* GradientView.swift */; };
 		89A4E754275EE67B0033EAC4 /* UIImageView+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A4E753275EE67B0033EAC4 /* UIImageView+DownloadImage.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		899BDB21275CFC330020A25B /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		89A0859A27635F3700C51B6D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		89A0859C27638CAD00C51B6D /* DimmingPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmingPresentationController.swift; sourceTree = "<group>"; };
+		89A0859E2763D6B300C51B6D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		89A4E753275EE67B0033EAC4 /* UIImageView+DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DownloadImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 				89609FC22757CE13007E4F2D /* SceneDelegate.swift */,
 				89609FC42757CE13007E4F2D /* SearchViewController.swift */,
 				89A4E753275EE67B0033EAC4 /* UIImageView+DownloadImage.swift */,
+				89A0859E2763D6B300C51B6D /* GradientView.swift */,
 				89609FD827581943007E4F2D /* SearchResultCell.swift */,
 				89609FD627581086007E4F2D /* SearchResultCell.xib */,
 				89609FDB27581DBC007E4F2D /* NothingFoundCell.xib */,
@@ -169,6 +172,7 @@
 				89609FC32757CE13007E4F2D /* SceneDelegate.swift in Sources */,
 				89609FD927581943007E4F2D /* SearchResultCell.swift in Sources */,
 				89A0859B27635F3700C51B6D /* DetailViewController.swift in Sources */,
+				89A0859F2763D6B300C51B6D /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
