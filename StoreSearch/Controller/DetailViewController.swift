@@ -36,7 +36,6 @@ class DetailViewController: UIViewController {
         }
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         modalPresentationStyle = .custom
@@ -86,12 +85,18 @@ class DetailViewController: UIViewController {
         }
     }
     
+    
+    
     // MARK: - Actions
+    
     @IBAction func close(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
 }
+
+
+    // MARK: - Extensions
 
 extension DetailViewController: UIViewControllerTransitioningDelegate {
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {

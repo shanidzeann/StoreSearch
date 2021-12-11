@@ -74,9 +74,6 @@ class Search {
         }
     }
     
-    
-    // MARK: - Helper Methods
-    
     private func iTunesURL(searchText: String, category: Category) -> URL {
         let kind = category.type
         

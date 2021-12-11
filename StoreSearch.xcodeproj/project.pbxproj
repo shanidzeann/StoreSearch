@@ -78,26 +78,74 @@
 		89609FBF2757CE12007E4F2D /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
-				89609FC02757CE12007E4F2D /* AppDelegate.swift */,
-				89609FC22757CE13007E4F2D /* SceneDelegate.swift */,
-				89609FC42757CE13007E4F2D /* SearchViewController.swift */,
-				89A4E753275EE67B0033EAC4 /* UIImageView+DownloadImage.swift */,
-				89A0859E2763D6B300C51B6D /* GradientView.swift */,
-				89609FD827581943007E4F2D /* SearchResultCell.swift */,
-				89609FD627581086007E4F2D /* SearchResultCell.xib */,
-				89609FDB27581DBC007E4F2D /* NothingFoundCell.xib */,
-				89609FC62757CE13007E4F2D /* Main.storyboard */,
+				89A085A72765492F00C51B6D /* Model */,
+				89A085A6276548E200C51B6D /* View */,
+				89A085A82765493900C51B6D /* Controller */,
+				89A085A92765496200C51B6D /* AppDelegate */,
+				89A085AB27654BD500C51B6D /* Extensions */,
 				89609FC92757CE18007E4F2D /* Assets.xcassets */,
 				89609FCE2757CE18007E4F2D /* Info.plist */,
-				89609FD427580220007E4F2D /* SearchResult.swift */,
+			);
+			path = StoreSearch;
+			sourceTree = "<group>";
+		};
+		89A085A6276548E200C51B6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89609FC62757CE13007E4F2D /* Main.storyboard */,
+				89609FDB27581DBC007E4F2D /* NothingFoundCell.xib */,
 				899BDB21275CFC330020A25B /* LoadingCell.xib */,
+				89609FD627581086007E4F2D /* SearchResultCell.xib */,
+				89609FD827581943007E4F2D /* SearchResultCell.swift */,
+				89A0859E2763D6B300C51B6D /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89A085A72765492F00C51B6D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89A085A42765230200C51B6D /* Search.swift */,
+				89609FD427580220007E4F2D /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89A085A82765493900C51B6D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				89609FC42757CE13007E4F2D /* SearchViewController.swift */,
 				89A0859A27635F3700C51B6D /* DetailViewController.swift */,
+				89A085AA276549E400C51B6D /* Animation */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		89A085A92765496200C51B6D /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				89609FC02757CE12007E4F2D /* AppDelegate.swift */,
+				89609FC22757CE13007E4F2D /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		89A085AA276549E400C51B6D /* Animation */ = {
+			isa = PBXGroup;
+			children = (
 				89A085A0276508AD00C51B6D /* BounceAnimationController.swift */,
 				89A0859C27638CAD00C51B6D /* DimmingPresentationController.swift */,
 				89A085A2276519A400C51B6D /* SlideOutAnimationController.swift */,
-				89A085A42765230200C51B6D /* Search.swift */,
 			);
-			path = StoreSearch;
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		89A085AB27654BD500C51B6D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				89A4E753275EE67B0033EAC4 /* UIImageView+DownloadImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
